@@ -1,4 +1,4 @@
-package com.telusko.ecomproj.model;
+package org.amazon.amazon.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
