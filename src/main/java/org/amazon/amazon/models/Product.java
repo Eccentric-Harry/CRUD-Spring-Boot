@@ -1,40 +1,31 @@
-package org.amazon.amazon.models;
+package com.telusko.ecomproj.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Product {
-    private int productId;
-    private String productName;
-    private double price;
 
-    public Product() {
-    }
-
-    public Product(int productId, String productName, double price) {
-        this.productId = productId;
-        this.productName = productName;
-        this.price = price;
-    }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String name;
+    private String desc;
+    private String brand;
+    private BigDecimal price;
+    private String category;
+    private Date releaseDate;
+    private boolean available;
+    private int quantity;
 }
